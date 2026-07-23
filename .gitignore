@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.codex/
+*.tsbuildinfo
+*-landing.png
+*-compare.png
+*-gold.png
+.DS_Store
+Thumbs.db
