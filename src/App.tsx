@@ -351,12 +351,7 @@ function App() {
 
       <section id="diplomas" className="diploma-section section-pad">
         <div className="section-heading">
-          <span>Resultados reais</span>
           <h2>JÁ SÃO MAIS DE 10 MIL PESSOAS BENEFICIADAS.</h2>
-          <p>
-            Histórias de conquista apresentadas em uma galeria contínua, com
-            pessoas que avançaram em suas trajetórias educacionais.
-          </p>
         </div>
         <div className="diploma-frame">
           <div className="diploma-track">
