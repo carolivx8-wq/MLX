@@ -40,25 +40,34 @@
 
 ## Componentes Replicados
 
-- Header fixo com logo, navegacao e CTA.
-- Faixa superior azul com slogan.
-- Hero centralizado com badge, titulo grande, copy e botoes.
-- Fundo animado com grid e formas academicas sutis, inspirado nos prints.
-- Carrossel circular de instituicoes em marquee horizontal, posicionado abaixo do carrossel de pessoas com diploma.
+Estrutura atual, na ordem definida pelo cliente:
+
+1. Header fixo com logo oficial `assets/mlx-logo.png` + texto `ASSESSORIA EDUCACIONAL` e botao de atendimento.
+2. Slogan `O elo que faltava entre voce e seu diploma`.
+3. Card `CONQUISTE O SEU DIPLOMA EM:` com TEMPO RECORDE / SEM BUROCRACIA / 100% ON-LINE e CTA de WhatsApp.
+4. Titulo `JA SAO MAIS DE 10 MIL PESSOAS BENEFICIADAS` + carrossel com as 12 fotos (todas unicas, alternando homem/mulher).
+5. Seis cartoes escuros: Historico Completo, Reconhecido pelo MEC, Diario Oficial da Uniao, Instituicoes Credenciadas, Sigilo Absoluto e Entrega Expressa.
+6. Titulo `ALGUMAS DAS 40 INSTITUICOES DISPONIVEIS` + carrossel circular com as 15 logos.
+7. `Escolha o nivel de certificacao que voce precisa` com os niveis em cartoes escuros ligados ao pop-up regional.
+8. Rodape basico: logo, assinatura e copyright.
+9. Botao flutuante de WhatsApp com o icone oficial da marca.
+
+Fundo animado azul com grid e halos suaves segue ativo atras de todo o conteudo.
+
+### Secoes removidas (nao existem no projeto do cliente)
+
+- Faixa superior com slogan e navegacao do header.
 - Secao "Como funciona" com quatro cards numerados.
-- Galeria/carrossel de diplomas com as 12 imagens locais.
-- Carrossel de pessoas com diploma reorganizado em sequencia homem/mulher e headline de mais de 10 mil beneficiados.
-- Niveis de certificacao em grid compacto.
-- Faixa de provas/metricas.
+- Faixa de provas/metricas (1:1, 24h, 100%).
 - FAQ em acordeon.
-- CTA final e botao flutuante de WhatsApp.
-- Rodape institucional com dados ficticios, links rapidos e canal de atendimento.
+- CTA final.
+- Rodape institucional com dados ficticios, links rapidos e contatos.
 
 ## Assets
 
 | Asset | Status | Acao |
 |---|---|---|
-| Logo | ausente | criada marca vetorial original inline |
+| Logo | disponivel | `assets/mlx-logo.png` aplicado no header e no rodape |
 | Diplomas | disponivel | usadas 12 imagens em `Diplomas/` |
 | Logos de instituicoes | disponivel | usadas 15 imagens circulares em `Instituições/` no carrossel |
 
@@ -76,6 +85,9 @@
 - Regioes de WhatsApp separadas em Norte, Nordeste, Centro-Oeste, Sudeste e Sul.
 - Validacao posterior confirmou os niveis Ensino Medio, Tecnico, Graduacao, Pos-Graduacao, Especializacao/MBA, Mestrado e Doutorado / PHD com pop-up regional.
 - Carrossel atualizado com logos reais de instituicoes e icone de WhatsApp redesenhado com telefone dentro do balao.
+- Reestruturacao conforme o print do cliente (24/07/2026): logo oficial no header, bloco "Conquiste o seu diploma em", cartoes escuros, rodape basico e icone oficial do WhatsApp no botao flutuante.
+- Playwright confirmou 12 fotos unicas no carrossel, 0 imagens quebradas, 0 erros de console e nenhum overflow horizontal no mobile.
+- Pop-up regional validado nos dois gatilhos: nivel de certificacao (mensagem especifica) e botao flutuante (mensagem generica).
 
 ## Divergencias Intencionais
 

@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .codex/
+.claude/
 *.tsbuildinfo
 *-landing.png
 *-compare.png
