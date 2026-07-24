@@ -5,6 +5,9 @@
   /* Base dos cartoes. Fica um degrau abaixo do azul do pop-up para o icone
      dourado e o botao translucido se destacarem dentro do proprio cartao. */
   --card-blue: #0c40ae;
+  /* Os cartoes de nivel descem mais um degrau para nao se confundirem com os
+     cartoes de beneficio nem com o hero. */
+  --card-blue-deep: #0a3591;
   --card: #0b0f18;
   --gold: #d9a63a;
   --gold-bright: #f0c463;
@@ -202,6 +205,23 @@ h3 {
   text-transform: uppercase;
 }
 
+/* ---------- Selo dourado ---------- */
+
+/* Disco dourado solido com anel branco e simbolo em azul. Nasceu no selo do
+   hero e o cliente pediu o mesmo padrao nos icones dos demais cartoes. O
+   tamanho fica com cada um; aqui mora so o acabamento. */
+.hero-seal,
+.card-icon,
+.level-icon {
+  display: grid;
+  place-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.62);
+  border-radius: 999px;
+  background: linear-gradient(150deg, #f7d894, #d9a63a 58%, #b8862a);
+  color: #0d3fa8;
+  box-shadow: 0 10px 24px rgba(0, 21, 88, 0.38);
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
@@ -246,16 +266,9 @@ h3 {
 }
 
 .hero-seal {
-  display: grid;
-  place-items: center;
   width: 52px;
   height: 52px;
   margin: 0 auto 18px;
-  border: 2px solid rgba(255, 255, 255, 0.62);
-  border-radius: 999px;
-  background: linear-gradient(150deg, #f7d894, #d9a63a 58%, #b8862a);
-  color: #0d3fa8;
-  box-shadow: 0 10px 24px rgba(0, 21, 88, 0.38);
 }
 
 .hero-card h1 {
@@ -410,15 +423,9 @@ h3 {
 }
 
 .card-icon {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   margin-bottom: 22px;
-  border: 1px solid rgba(217, 166, 58, 0.32);
-  border-radius: 10px;
-  background: rgba(217, 166, 58, 0.12);
-  color: var(--gold-bright);
 }
 
 .benefit-card h3 {
@@ -488,6 +495,9 @@ h3 {
   flex-direction: column;
   align-items: center;
   padding: 26px 20px 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035)),
+    var(--card-blue-deep);
   text-align: center;
   transition:
     transform 0.2s ease,
@@ -502,15 +512,8 @@ h3 {
 }
 
 .level-icon {
-  display: grid;
-  place-items: center;
   width: 62px;
   height: 62px;
-  border: 1px solid rgba(240, 196, 99, 0.45);
-  border-radius: 16px;
-  background: linear-gradient(150deg, rgba(240, 196, 99, 0.26), rgba(217, 166, 58, 0.1));
-  color: var(--gold-bright);
-  box-shadow: 0 10px 26px rgba(217, 166, 58, 0.18);
 }
 
 .level-card h3 {
