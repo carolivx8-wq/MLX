@@ -162,9 +162,8 @@ h3 {
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 12px max(16px, calc((100% - 1180px) / 2));
+  justify-content: center;
+  padding: 14px 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(1, 24, 79, 0.88);
   backdrop-filter: blur(14px);
@@ -173,52 +172,23 @@ h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   min-width: 0;
 }
 
 .brand-logo {
   width: auto;
-  height: 52px;
+  height: 76px;
   object-fit: contain;
 }
 
 .brand-copy {
   font-family: Sora, Inter, sans-serif;
-  font-size: clamp(12px, 2.6vw, 16px);
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: clamp(17px, 3.6vw, 26px);
+  font-weight: 800;
+  letter-spacing: 0.07em;
   line-height: 1.15;
   text-transform: uppercase;
-}
-
-.header-cta {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  min-height: 42px;
-  padding: 0 16px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 700;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-}
-
-.header-cta:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.header-cta .whatsapp-glyph {
-  color: var(--whatsapp);
 }
 
 /* ---------- Hero ---------- */
@@ -254,13 +224,14 @@ h3 {
   font-size: clamp(22px, 3.4vw, 34px);
   font-weight: 800;
   line-height: 1.15;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .hero-highlights {
   display: grid;
   gap: 10px;
-  margin: 20px 0 0;
+  margin: 22px auto 0;
   padding: 0;
   list-style: none;
 }
@@ -278,41 +249,6 @@ h3 {
 .hero-highlights svg {
   flex: 0 0 auto;
   color: var(--gold-bright);
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 0 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  line-height: 1;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-}
-
-.btn-primary {
-  border: 1px solid rgba(255, 255, 255, 0.88);
-  background: #ffffff;
-  color: #011f67;
-  box-shadow: 0 16px 46px rgba(255, 255, 255, 0.16);
-}
-
-.btn-primary .whatsapp-glyph {
-  color: var(--whatsapp-deep);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.hero-card .btn {
-  margin-top: 24px;
 }
 
 /* ---------- Carrossel de diplomas ---------- */
@@ -586,15 +522,9 @@ h3 {
   flex: 0 0 auto;
 }
 
-.header-cta .whatsapp-glyph,
 .dialog-eyebrow .whatsapp-glyph {
   width: 19px;
   height: 19px;
-}
-
-.btn .whatsapp-glyph {
-  width: 21px;
-  height: 21px;
 }
 
 .floating-whatsapp {
@@ -824,16 +754,7 @@ h3 {
   }
 
   .brand-logo {
-    height: 44px;
-  }
-
-  .header-cta {
-    width: 44px;
-    padding: 0;
-  }
-
-  .header-cta span {
-    display: none;
+    height: 60px;
   }
 
   .hero {
@@ -872,10 +793,6 @@ h3 {
 
   .diploma-card img {
     height: 430px;
-  }
-
-  .hero-card .btn {
-    width: 100%;
   }
 
   .region-dialog {

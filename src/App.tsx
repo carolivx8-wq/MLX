@@ -234,10 +234,6 @@ function App() {
 
       <header className="site-header">
         <Logo />
-        <button className="header-cta" type="button" onClick={openGenericWhatsApp}>
-          <WhatsAppIcon />
-          <span>Atendimento</span>
-        </button>
       </header>
 
       <section className="hero">
@@ -252,10 +248,6 @@ function App() {
               </li>
             ))}
           </ul>
-          <button className="btn btn-primary" type="button" onClick={openGenericWhatsApp}>
-            <WhatsAppIcon />
-            Falar com a MLX
-          </button>
         </div>
       </section>
 
