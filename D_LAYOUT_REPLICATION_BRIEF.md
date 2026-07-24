@@ -13,13 +13,12 @@
 
 | Token | Valor | Origem |
 |---|---|---|
-| background | `#080808` | referencia adaptada |
-| surface | `#121212` | referencia adaptada |
-| primary/gold | `#dfac2a` | referencia medida na referencia |
-| bright gold | `#ffcf4a` | referencia adaptada para destaque |
-| text | `#f6f1e4` | referencia adaptada |
-| muted | `#b7b0a4` | referencia adaptada |
-| support accent | `#71c7a5` | original para evitar paleta monotona |
+| background | `#011F67` | requisito do cliente |
+| surface | `#0F4ED1` | tom azul claro dos prints |
+| surface highlight | `#1B67E9` | hover/cards destacados |
+| text | `#FFFFFF` | requisito do cliente |
+| muted | `rgba(255,255,255,.78)` | contraste secundario |
+| whatsapp | `#25D366` | cor fiel ao WhatsApp |
 
 ### Tipografia
 
@@ -34,17 +33,17 @@
 | Elemento | Medida/Regra |
 |---|---|
 | Container | `min(1180px, calc(100% - 32px))` |
-| Header | fixed, 76px desktop, glass dark, border gold |
+| Header | fixed, 76px desktop, glass azul, borda branca translucida |
 | Hero | centralizado, min-height 760px desktop |
-| Cards | radius 8px, dark surfaces, gold borders |
+| Cards | radius 8px, surfaces azuis claras, bordas brancas |
 | Mobile | header compacto, grids em uma coluna |
 
 ## Componentes Replicados
 
 - Header fixo com logo, navegacao e CTA.
-- Faixa superior dourada com slogan.
+- Faixa superior azul com slogan.
 - Hero centralizado com badge, titulo grande, copy e botoes.
-- Fundo animado com grid, linhas douradas, brilhos laterais e constelacoes.
+- Fundo animado com grid e formas academicas sutis, inspirado nos prints.
 - Carrossel circular de clientes em marquee horizontal.
 - Secao "Como funciona" com quatro cards numerados.
 - Galeria/carrossel de diplomas com as 12 imagens locais.
@@ -70,9 +69,12 @@
 - Checagem Playwright confirmou 24/24 imagens carregadas no carrossel duplicado.
 - Checagem Playwright confirmou `scrollWidth == clientWidth` fora dos trilhos animados com overflow controlado.
 - Nova validacao de paridade executada apos ajuste dourado: screenshots `desktop-gold.png` e `mobile-gold.png`.
+- Ajuste posterior de identidade educacional: fundo `#011F67`, fonte branca, surfaces em azul claro e padrao com formas academicas conforme prints fornecidos.
+- Fluxo de WhatsApp validado via Playwright: botao flutuante abre modal regional, modulo abre o mesmo modal com mensagem especifica.
 
 ## Divergencias Intencionais
 
 - Nao foram copiados logo, marca, textos distintivos nem assets proprietarios da referencia.
 - Conteudo foi reposicionado para `MLX Assessoria Educacional`, com slogan `O elo que faltava entre voce e seu diploma.`
+- Numeros de WhatsApp ficaram preparados em `whatsappRegions`, com `phone: ""` para preencher por regiao.
 - Mascote nao foi criado, conforme instruido.

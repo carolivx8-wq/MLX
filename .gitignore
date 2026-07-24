@@ -5,5 +5,7 @@ dist/
 *-landing.png
 *-compare.png
 *-gold.png
+*-blue.png
+*-modal.png
 .DS_Store
 Thumbs.db

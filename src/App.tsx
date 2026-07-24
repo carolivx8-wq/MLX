@@ -9,11 +9,14 @@ import {
   GraduationCap,
   LockKeyhole,
   MessageCircle,
+  Send,
   ShieldCheck,
   Sparkles,
   Star,
   UserCheck,
+  X,
 } from "lucide-react";
+import { useState } from "react";
 
 const brandName = "MLX Assessoria Educacional";
 const slogan = "O elo que faltava entre você e seu diploma.";
@@ -47,15 +50,57 @@ const clientItems = [
   { name: "Cliente 08", label: "Suporte", initials: "C8" },
 ];
 
+const genericWhatsAppMessage =
+  "Olá! Vim pelo site da MLX Assessoria Educacional e gostaria de receber atendimento.";
+
+const whatsappRegions = [
+  { id: "norte", label: "Região Norte", phone: "" },
+  { id: "nordeste", label: "Região Nordeste", phone: "" },
+  { id: "centro-sul", label: "Região Centro-Sul", phone: "" },
+  { id: "sudeste", label: "Região Sudeste", phone: "" },
+];
+
 const courses = [
-  "Administração",
-  "Pedagogia",
-  "Contabilidade",
-  "Gestão Comercial",
-  "Marketing",
-  "Recursos Humanos",
-  "Logística",
-  "Sistemas de Gestão",
+  {
+    name: "Administração",
+    message:
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Administração. Pode me orientar?",
+  },
+  {
+    name: "Pedagogia",
+    message:
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Pedagogia. Pode me orientar?",
+  },
+  {
+    name: "Contabilidade",
+    message:
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Contabilidade. Pode me orientar?",
+  },
+  {
+    name: "Gestão Comercial",
+    message:
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Gestão Comercial. Pode me orientar?",
+  },
+  {
+    name: "Marketing",
+    message:
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Marketing. Pode me orientar?",
+  },
+  {
+    name: "Recursos Humanos",
+    message:
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Recursos Humanos. Pode me orientar?",
+  },
+  {
+    name: "Logística",
+    message:
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Logística. Pode me orientar?",
+  },
+  {
+    name: "Sistemas de Gestão",
+    message:
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Sistemas de Gestão. Pode me orientar?",
+  },
 ];
 
 const steps = [
@@ -106,41 +151,22 @@ const faq = [
 
 function AnimatedBackground() {
   return (
-    <div className="animated-background" aria-hidden="true">
+    <div className="animated-background blue-pattern" aria-hidden="true">
       <div className="background-grid" />
-      <div className="gold-haze haze-left" />
-      <div className="gold-haze haze-right" />
-      <div className="scan-line line-one" />
-      <div className="scan-line line-two" />
-      <svg className="constellation constellation-one" viewBox="0 0 420 320">
-        <polyline points="18,226 72,118 154,94 218,36 312,64 386,18" />
-        <circle cx="18" cy="226" r="4" />
-        <circle cx="72" cy="118" r="4" />
-        <circle cx="154" cy="94" r="4" />
-        <circle cx="218" cy="36" r="4" />
-        <circle cx="312" cy="64" r="4" />
-        <circle cx="386" cy="18" r="4" />
-      </svg>
-      <svg className="constellation constellation-two" viewBox="0 0 420 320">
-        <polyline points="28,48 118,96 184,82 236,168 318,144 388,252" />
-        <circle cx="28" cy="48" r="4" />
-        <circle cx="118" cy="96" r="4" />
-        <circle cx="184" cy="82" r="4" />
-        <circle cx="236" cy="168" r="4" />
-        <circle cx="318" cy="144" r="4" />
-        <circle cx="388" cy="252" r="4" />
-      </svg>
-      <svg className="constellation constellation-three" viewBox="0 0 420 320">
-        <polyline points="34,266 92,216 156,244 248,172 326,214 390,122" />
-        <circle cx="34" cy="266" r="4" />
-        <circle cx="92" cy="216" r="4" />
-        <circle cx="156" cy="244" r="4" />
-        <circle cx="248" cy="172" r="4" />
-        <circle cx="326" cy="214" r="4" />
-        <circle cx="390" cy="122" r="4" />
-      </svg>
+      <div className="blue-haze haze-left" />
+      <div className="blue-haze haze-right" />
+      <div className="school-shapes layer-one" />
+      <div className="school-shapes layer-two" />
     </div>
   );
+}
+
+type WhatsAppContext =
+  | { kind: "generic"; message: string }
+  | { kind: "course"; course: string; message: string };
+
+function buildWhatsAppUrl(phone: string, message: string) {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
 function Logo() {
@@ -188,8 +214,23 @@ function Logo() {
 }
 
 function App() {
+  const [whatsAppContext, setWhatsAppContext] = useState<WhatsAppContext | null>(
+    null,
+  );
   const doubledClients = [...clientItems, ...clientItems];
   const doubledDiplomas = [...diplomaImages, ...diplomaImages];
+  const openGenericWhatsApp = () =>
+    setWhatsAppContext({ kind: "generic", message: genericWhatsAppMessage });
+  const closeWhatsAppPopup = () => setWhatsAppContext(null);
+  const chooseRegion = (phone: string) => {
+    if (!whatsAppContext) return;
+    if (!phone) {
+      window.alert("Número desta região ainda não foi configurado.");
+      return;
+    }
+    window.open(buildWhatsAppUrl(phone, whatsAppContext.message), "_blank");
+    closeWhatsAppPopup();
+  };
 
   return (
     <main id="top" className="site-shell">
@@ -207,10 +248,10 @@ function App() {
           <a href="#diplomas">Diplomas</a>
           <a href="#duvidas">Dúvidas</a>
         </nav>
-        <a className="header-cta" href="#contato">
+        <button className="header-cta" type="button" onClick={openGenericWhatsApp}>
           <MessageCircle size={18} />
           Atendimento
-        </a>
+        </button>
       </header>
 
       <section className="hero section-pad">
@@ -230,10 +271,10 @@ function App() {
             próxima, linguagem simples e acompanhamento de ponta a ponta.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#contato">
+            <button className="btn btn-primary" type="button" onClick={openGenericWhatsApp}>
               <MessageCircle size={20} />
               Falar com a MLX
-            </a>
+            </button>
             <a className="btn btn-secondary" href="#como-funciona">
               Ver processo
               <ArrowRight size={18} />
@@ -332,10 +373,22 @@ function App() {
         </div>
         <div className="course-grid">
           {courses.map((course) => (
-            <div className="course-pill" key={course}>
+            <button
+              className="course-pill"
+              key={course.name}
+              type="button"
+              onClick={() =>
+                setWhatsAppContext({
+                  kind: "course",
+                  course: course.name,
+                  message: course.message,
+                })
+              }
+            >
               <BookOpenCheck size={18} />
-              {course}
-            </div>
+              <span>{course.name}</span>
+              <MessageCircle className="course-whatsapp" size={19} />
+            </button>
           ))}
         </div>
       </section>
@@ -383,15 +436,67 @@ function App() {
             Um atendimento breve já ajuda a entender o cenário, levantar os
             documentos necessários e indicar o melhor caminho para seguir.
           </p>
-        <a className="btn btn-primary" href="#top">
+        <button className="btn btn-primary" type="button" onClick={openGenericWhatsApp}>
           <CheckCircle2 size={20} />
           Quero atendimento MLX
-        </a>
+        </button>
       </section>
 
-      <a className="floating-whatsapp" href="#contato" aria-label="Abrir atendimento por WhatsApp">
+      <button
+        className="floating-whatsapp"
+        type="button"
+        onClick={openGenericWhatsApp}
+        aria-label="Abrir atendimento por WhatsApp"
+      >
         <MessageCircle size={26} />
-      </a>
+      </button>
+
+      {whatsAppContext && (
+        <div className="whatsapp-modal" role="dialog" aria-modal="true">
+          <button
+            className="modal-backdrop"
+            type="button"
+            aria-label="Fechar seleção de região"
+            onClick={closeWhatsAppPopup}
+          />
+          <div className="region-dialog">
+            <button
+              className="dialog-close"
+              type="button"
+              aria-label="Fechar"
+              onClick={closeWhatsAppPopup}
+            >
+              <X size={20} />
+            </button>
+            <span className="dialog-eyebrow">
+              <MessageCircle size={16} />
+              Atendimento por região
+            </span>
+            <h3>
+              {whatsAppContext.kind === "course"
+                ? `Escolha sua região para ${whatsAppContext.course}`
+                : "Escolha sua região para falar com a MLX"}
+            </h3>
+            <p>
+              Você será direcionado para uma conversa no WhatsApp com a mensagem
+              certa já preenchida.
+            </p>
+            <div className="region-grid">
+              {whatsappRegions.map((region) => (
+                <button
+                  className="region-option"
+                  key={region.id}
+                  type="button"
+                  onClick={() => chooseRegion(region.phone)}
+                >
+                  <span>{region.label}</span>
+                  <Send size={17} />
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
