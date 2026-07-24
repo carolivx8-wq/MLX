@@ -6,8 +6,9 @@
      dourado e o botao translucido se destacarem dentro do proprio cartao. */
   --card-blue: #0c40ae;
   /* Os cartoes de nivel descem mais um degrau para nao se confundirem com os
-     cartoes de beneficio nem com o hero. */
-  --card-blue-deep: #0a3591;
+     cartoes de beneficio nem com o hero. Nao dá pra descer muito mais: em
+     torno de #07266a o fundo do cartao encosta no fundo da pagina. */
+  --card-blue-deep: #082c7a;
   --card: #0b0f18;
   --gold: #d9a63a;
   --gold-bright: #f0c463;
