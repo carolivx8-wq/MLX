@@ -325,22 +325,6 @@ function App() {
         </div>
       </section>
 
-      <section className="client-strip" aria-label="Carrossel de instituições parceiras">
-        <div className="section-heading compact">
-          <span>Instituições</span>
-          <h2>Instituições parceiras que fortalecem trajetórias educacionais</h2>
-        </div>
-        <div className="circle-marquee">
-          <div className="circle-track">
-            {doubledInstitutionLogos.map((logo, index) => (
-              <div className="client-bubble institution-bubble" key={`${logo.src}-${index}`}>
-                <img src={logo.src} alt={logo.alt} loading="eager" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="como-funciona" className="section-pad">
         <div className="section-heading">
           <span>Como funciona</span>
@@ -380,6 +364,22 @@ function App() {
               <figure className="diploma-card" key={`${image.src}-${index}`}>
                 <img src={image.src} alt={image.alt} loading="eager" />
               </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="client-strip" aria-label="Carrossel de instituições parceiras">
+        <div className="section-heading compact">
+          <span>Instituições</span>
+          <h2>ALGUMAS DAS 40 INSTITUIÇÕES PARCEIRAS</h2>
+        </div>
+        <div className="circle-marquee">
+          <div className="circle-track">
+            {doubledInstitutionLogos.map((logo, index) => (
+              <div className="client-bubble institution-bubble" key={`${logo.src}-${index}`}>
+                <img src={logo.src} alt={logo.alt} loading="eager" />
+              </div>
             ))}
           </div>
         </div>

@@ -44,7 +44,7 @@
 - Faixa superior azul com slogan.
 - Hero centralizado com badge, titulo grande, copy e botoes.
 - Fundo animado com grid e formas academicas sutis, inspirado nos prints.
-- Carrossel circular de clientes em marquee horizontal.
+- Carrossel circular de instituicoes em marquee horizontal, posicionado abaixo do carrossel de pessoas com diploma.
 - Secao "Como funciona" com quatro cards numerados.
 - Galeria/carrossel de diplomas com as 12 imagens locais.
 - Carrossel de pessoas com diploma reorganizado em sequencia homem/mulher e headline de mais de 10 mil beneficiados.
