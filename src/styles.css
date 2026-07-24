@@ -347,22 +347,35 @@ details,
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  min-height: 66px;
+  min-height: 72px;
   padding: 12px 16px;
   border: 1px solid rgba(255, 255, 255, 0.44);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   cursor: pointer;
-  font-weight: 800;
   text-align: left;
   transition:
     transform 0.2s ease,
     background 0.2s ease;
 }
 
-.region-option span {
+.region-label {
+  display: grid;
+  gap: 4px;
   min-width: 0;
+}
+
+.region-label strong {
+  line-height: 1.35;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.region-label small {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 400;
   line-height: 1.35;
 }
 
