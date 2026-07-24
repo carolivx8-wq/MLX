@@ -298,7 +298,7 @@ h3 {
   display: flex;
   gap: 22px;
   width: max-content;
-  animation: diplomaMarquee 60s linear infinite;
+  animation: diplomaMarquee 26s linear infinite;
 }
 
 .diploma-card {
