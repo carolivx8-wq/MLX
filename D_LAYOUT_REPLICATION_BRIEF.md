@@ -47,7 +47,7 @@
 - Carrossel circular de clientes em marquee horizontal.
 - Secao "Como funciona" com quatro cards numerados.
 - Galeria/carrossel de diplomas com as 12 imagens locais.
-- Cursos em grid compacto.
+- Niveis de certificacao em grid compacto.
 - Faixa de provas/metricas.
 - FAQ em acordeon.
 - CTA final e botao flutuante de WhatsApp.
@@ -70,7 +70,8 @@
 - Checagem Playwright confirmou `scrollWidth == clientWidth` fora dos trilhos animados com overflow controlado.
 - Nova validacao de paridade executada apos ajuste dourado: screenshots `desktop-gold.png` e `mobile-gold.png`.
 - Ajuste posterior de identidade educacional: fundo `#011F67`, fonte branca, surfaces em azul claro e padrao com formas academicas conforme prints fornecidos.
-- Fluxo de WhatsApp validado via Playwright: botao flutuante abre modal regional, modulo abre o mesmo modal com mensagem especifica.
+- Fluxo de WhatsApp validado via Playwright: botao flutuante abre modal regional, nivel de certificacao abre o mesmo modal com mensagem especifica.
+- Validacao posterior confirmou os niveis Ensino Medio, Tecnico, Graduacao, Pos-Graduacao, Especializacao/MBA, Mestrado e Doutorado / PHD com pop-up regional.
 
 ## Divergencias Intencionais
 

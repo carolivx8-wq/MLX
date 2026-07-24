@@ -60,46 +60,41 @@ const whatsappRegions = [
   { id: "sudeste", label: "Região Sudeste", phone: "" },
 ];
 
-const courses = [
+const certificationLevels = [
   {
-    name: "Administração",
+    name: "Ensino Médio",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Administração. Pode me orientar?",
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Ensino Médio. Pode me orientar?",
   },
   {
-    name: "Pedagogia",
+    name: "Técnico",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Pedagogia. Pode me orientar?",
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de nível Técnico. Pode me orientar?",
   },
   {
-    name: "Contabilidade",
+    name: "Graduação",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Contabilidade. Pode me orientar?",
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Graduação. Pode me orientar?",
   },
   {
-    name: "Gestão Comercial",
+    name: "Pós-Graduação",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Gestão Comercial. Pode me orientar?",
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Pós-Graduação. Pode me orientar?",
   },
   {
-    name: "Marketing",
+    name: "Especialização/MBA",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Marketing. Pode me orientar?",
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Especialização/MBA. Pode me orientar?",
   },
   {
-    name: "Recursos Humanos",
+    name: "Mestrado",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Recursos Humanos. Pode me orientar?",
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Mestrado. Pode me orientar?",
   },
   {
-    name: "Logística",
+    name: "Doutorado / PHD",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Logística. Pode me orientar?",
-  },
-  {
-    name: "Sistemas de Gestão",
-    message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse no módulo de Sistemas de Gestão. Pode me orientar?",
+      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Doutorado / PHD. Pode me orientar?",
   },
 ];
 
@@ -135,7 +130,7 @@ const faq = [
   {
     question: "Vocês atendem diferentes áreas?",
     answer:
-      "Sim. A landing já está preparada para destacar cursos superiores, técnicos, pós-graduação e documentação acadêmica complementar.",
+      "Sim. A landing já está preparada para Ensino Médio, Técnico, Graduação, Pós-Graduação, Especialização/MBA, Mestrado e Doutorado / PHD.",
   },
   {
     question: "Como o atendimento é direcionado?",
@@ -163,7 +158,7 @@ function AnimatedBackground() {
 
 type WhatsAppContext =
   | { kind: "generic"; message: string }
-  | { kind: "course"; course: string; message: string };
+  | { kind: "certification"; certification: string; message: string };
 
 function buildWhatsAppUrl(phone: string, message: string) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -244,7 +239,7 @@ function App() {
         <Logo />
         <nav className="desktop-nav" aria-label="Navegacao principal">
           <a href="#como-funciona">Como funciona</a>
-          <a href="#cursos">Cursos</a>
+          <a href="#certificacoes">Certificações</a>
           <a href="#diplomas">Diplomas</a>
           <a href="#duvidas">Dúvidas</a>
         </nav>
@@ -359,34 +354,34 @@ function App() {
         </div>
       </section>
 
-      <section id="cursos" className="section-pad split-section">
+      <section id="certificacoes" className="section-pad split-section">
         <div>
           <span className="eyebrow inline">
             <GraduationCap size={15} />
-            Áreas de atendimento
+            Níveis de certificação
           </span>
-          <h2>Cursos e formações para diferentes objetivos profissionais</h2>
+          <h2>Escolha o nível de certificação que você precisa</h2>
           <p>
-            A MLX atende quem busca organizar sua documentação,
-            fortalecer currículo e avançar com mais segurança na carreira.
+            A MLX orienta seu atendimento conforme o nível desejado, com
+            mensagem específica para agilizar o primeiro contato.
           </p>
         </div>
         <div className="course-grid">
-          {courses.map((course) => (
+          {certificationLevels.map((level) => (
             <button
               className="course-pill"
-              key={course.name}
+              key={level.name}
               type="button"
               onClick={() =>
                 setWhatsAppContext({
-                  kind: "course",
-                  course: course.name,
-                  message: course.message,
+                  kind: "certification",
+                  certification: level.name,
+                  message: level.message,
                 })
               }
             >
               <BookOpenCheck size={18} />
-              <span>{course.name}</span>
+              <span>{level.name}</span>
               <MessageCircle className="course-whatsapp" size={19} />
             </button>
           ))}
@@ -473,8 +468,8 @@ function App() {
               Atendimento por região
             </span>
             <h3>
-              {whatsAppContext.kind === "course"
-                ? `Escolha sua região para ${whatsAppContext.course}`
+              {whatsAppContext.kind === "certification"
+                ? `Escolha sua região para ${whatsAppContext.certification}`
                 : "Escolha sua região para falar com a MLX"}
             </h3>
             <p>
