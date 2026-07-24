@@ -1,13 +1,19 @@
 import {
   Award,
+  BookOpenCheck,
+  Briefcase,
   Check,
   Clock3,
   FileText,
   GraduationCap,
   Lock,
+  Medal,
+  School,
   ScrollText,
   Send,
   ShieldCheck,
+  Trophy,
+  Wrench,
   X,
 } from "lucide-react";
 import { useState } from "react";
@@ -127,36 +133,43 @@ const whatsappRegions = [
 
 const certificationLevels = [
   {
+    icon: School,
     name: "Ensino Médio",
     message:
       "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Ensino Médio. Pode me orientar?",
   },
   {
+    icon: Wrench,
     name: "Técnico",
     message:
       "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de nível Técnico. Pode me orientar?",
   },
   {
+    icon: GraduationCap,
     name: "Graduação",
     message:
       "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Graduação. Pode me orientar?",
   },
   {
+    icon: BookOpenCheck,
     name: "Pós-Graduação",
     message:
       "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Pós-Graduação. Pode me orientar?",
   },
   {
+    icon: Briefcase,
     name: "Especialização/MBA",
     message:
       "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Especialização/MBA. Pode me orientar?",
   },
   {
+    icon: Medal,
     name: "Mestrado",
     message:
       "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Mestrado. Pode me orientar?",
   },
   {
+    icon: Trophy,
     name: "Doutorado / PHD",
     message:
       "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Doutorado / PHD. Pode me orientar?",
@@ -301,28 +314,31 @@ function App() {
           Escolha o nível de certificação que <span>você precisa</span>
         </h2>
         <div className="course-grid">
-          {certificationLevels.map((level) => (
-            <article className="dark-card level-card" key={level.name}>
-              <span className="level-icon" aria-hidden="true">
-                <GraduationCap size={30} />
-              </span>
-              <h3>{level.name}</h3>
-              <button
-                className="level-cta"
-                type="button"
-                onClick={() =>
-                  setWhatsAppContext({
-                    kind: "certification",
-                    certification: level.name,
-                    message: level.message,
-                  })
-                }
-              >
-                <span>Consultar</span>
-                <WhatsAppIcon className="course-whatsapp" />
-              </button>
-            </article>
-          ))}
+          {certificationLevels.map((level) => {
+            const Icon = level.icon;
+            return (
+              <article className="dark-card level-card" key={level.name}>
+                <span className="level-icon" aria-hidden="true">
+                  <Icon size={30} />
+                </span>
+                <h3>{level.name}</h3>
+                <button
+                  className="level-cta"
+                  type="button"
+                  onClick={() =>
+                    setWhatsAppContext({
+                      kind: "certification",
+                      certification: level.name,
+                      message: level.message,
+                    })
+                  }
+                >
+                  <span>Consultar</span>
+                  <WhatsAppIcon className="course-whatsapp" />
+                </button>
+              </article>
+            );
+          })}
         </div>
       </section>
 
