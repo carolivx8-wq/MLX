@@ -78,11 +78,15 @@ const genericWhatsAppMessage =
   "Olá! Vim pelo site da MLX Assessoria Educacional e gostaria de receber atendimento.";
 
 const whatsappRegions = [
-  { id: "norte", label: "Região Norte", phone: "" },
-  { id: "nordeste", label: "Região Nordeste", phone: "" },
-  { id: "centro-oeste", label: "Região Centro-Oeste", phone: "" },
-  { id: "sudeste", label: "Região Sudeste", phone: "" },
-  { id: "sul", label: "Região Sul", phone: "" },
+  { id: "norte", label: "Região Norte - AC - AP - AM - PA - RO - RR - TO", phone: "" },
+  {
+    id: "nordeste",
+    label: "Região Nordeste - AL - BA - CE - MA - PB - PE - PI - RN - SE",
+    phone: "",
+  },
+  { id: "centro-oeste", label: "Região Centro-Oeste - DF - GO - MT - MS", phone: "" },
+  { id: "sudeste", label: "Região Sudeste - ES - MG - RJ - SP", phone: "" },
+  { id: "sul", label: "Região Sul - RS - PR - SC", phone: "" },
 ];
 
 const certificationLevels = [
