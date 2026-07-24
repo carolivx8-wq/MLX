@@ -252,7 +252,11 @@ function App() {
       <section className="hero">
         <p className="hero-slogan">{slogan}</p>
         <div className="hero-card">
+          <span className="hero-seal" aria-hidden="true">
+            <Award size={26} strokeWidth={2.2} />
+          </span>
           <h1>Conquiste o seu diploma em:</h1>
+          <span className="hero-divider" aria-hidden="true" />
           <ul className="hero-highlights">
             {heroHighlights.map((highlight) => (
               <li key={highlight}>
