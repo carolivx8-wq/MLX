@@ -1,0 +1,23 @@
+{
+  "name": "MLX Assessoria Educacional",
+  "short_name": "MLX",
+  "description": "O elo que faltava entre você e seu diploma.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#011f67",
+  "theme_color": "#011f67",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
