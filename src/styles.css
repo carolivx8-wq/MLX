@@ -796,6 +796,55 @@ h3 {
   color: var(--gold);
 }
 
+.whatsapp-glyph {
+  position: relative;
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 1.25em;
+  height: 1.25em;
+  color: currentColor;
+}
+
+.whatsapp-glyph svg {
+  position: absolute;
+  stroke: currentColor;
+}
+
+.whatsapp-glyph-bubble {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  stroke-width: 2.25;
+}
+
+.whatsapp-glyph-phone {
+  top: 27%;
+  left: 29%;
+  width: 43%;
+  height: 43%;
+  stroke-width: 3;
+  transform: rotate(7deg);
+  transform-origin: center;
+}
+
+.header-cta .whatsapp-glyph,
+.footer-column .whatsapp-glyph,
+.dialog-eyebrow .whatsapp-glyph {
+  width: 19px;
+  height: 19px;
+}
+
+.btn .whatsapp-glyph {
+  width: 20px;
+  height: 20px;
+}
+
+.course-whatsapp {
+  width: 22px;
+  height: 22px;
+}
+
 .client-strip {
   padding: 10px 0 50px;
 }
@@ -895,6 +944,24 @@ h3 {
 .client-bubble small {
   color: var(--muted);
   font-size: 12px;
+}
+
+.institution-bubble {
+  padding: 0;
+  overflow: hidden;
+  border-color: rgba(255, 255, 255, 0.26);
+  background: transparent;
+  box-shadow:
+    0 12px 34px rgba(0, 20, 74, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.institution-bubble img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 999px;
 }
 
 .steps-grid {
@@ -1605,6 +1672,19 @@ details,
   color: #25d366;
 }
 
+.course-whatsapp svg,
+.btn-primary .whatsapp-glyph svg {
+  color: #25d366;
+}
+
+.institution-bubble {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: transparent;
+  box-shadow:
+    0 12px 34px rgba(0, 20, 74, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
 .circle-marquee::before,
 .diploma-frame::before {
   background: linear-gradient(90deg, #011f67, transparent);
@@ -1624,6 +1704,15 @@ details,
   box-shadow:
     0 0 0 10px rgba(37, 211, 102, 0.12),
     0 18px 44px rgba(0, 61, 31, 0.36);
+}
+
+.floating-whatsapp .whatsapp-glyph-floating {
+  width: 34px;
+  height: 34px;
+}
+
+.floating-whatsapp .whatsapp-glyph svg {
+  color: #ffffff;
 }
 
 .region-dialog {

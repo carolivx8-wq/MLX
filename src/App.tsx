@@ -45,16 +45,26 @@ const diplomaImages = [
   alt: `Exemplo de diploma apresentado pela ${brandName} - ${name}`,
 }));
 
-const clientItems = [
-  { name: "Cliente 01", label: "Graduação", initials: "C1" },
-  { name: "Cliente 02", label: "Técnico", initials: "C2" },
-  { name: "Cliente 03", label: "Pós", initials: "C3" },
-  { name: "Cliente 04", label: "Validação", initials: "C4" },
-  { name: "Cliente 05", label: "Histórico", initials: "C5" },
-  { name: "Cliente 06", label: "Certificação", initials: "C6" },
-  { name: "Cliente 07", label: "Documentos", initials: "C7" },
-  { name: "Cliente 08", label: "Suporte", initials: "C8" },
-];
+const institutionLogos = [
+  "mma01.png",
+  "mma01 (2).png",
+  "mma01 (3).png",
+  "mma01 (4).png",
+  "mma01 (5).png",
+  "mma01 (6).png",
+  "mma01 (7).png",
+  "mma01 (8).png",
+  "mma01 (9).png",
+  "mma01 (10).png",
+  "mma01 (11).png",
+  "mma01 (12).png",
+  "mma01 (13).png",
+  "mma01 (14).png",
+  "mma01 (15).png",
+].map((name, index) => ({
+  src: new URL(`../Instituições/${name}`, import.meta.url).href,
+  alt: `Logo de instituição parceira ${index + 1}`,
+}));
 
 const genericWhatsAppMessage =
   "Olá! Vim pelo site da MLX Assessoria Educacional e gostaria de receber atendimento.";
@@ -170,6 +180,15 @@ function buildWhatsAppUrl(phone: string, message: string) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
+function WhatsAppIcon({ className = "" }: { className?: string }) {
+  return (
+    <span className={`whatsapp-glyph ${className}`} aria-hidden="true">
+      <MessageCircle className="whatsapp-glyph-bubble" />
+      <Phone className="whatsapp-glyph-phone" />
+    </span>
+  );
+}
+
 function Logo() {
   return (
     <a className="brand" href="#top" aria-label="Voltar ao inicio">
@@ -218,7 +237,7 @@ function App() {
   const [whatsAppContext, setWhatsAppContext] = useState<WhatsAppContext | null>(
     null,
   );
-  const doubledClients = [...clientItems, ...clientItems];
+  const doubledInstitutionLogos = [...institutionLogos, ...institutionLogos];
   const doubledDiplomas = [...diplomaImages, ...diplomaImages];
   const openGenericWhatsApp = () =>
     setWhatsAppContext({ kind: "generic", message: genericWhatsAppMessage });
@@ -250,7 +269,7 @@ function App() {
           <a href="#duvidas">Dúvidas</a>
         </nav>
         <button className="header-cta" type="button" onClick={openGenericWhatsApp}>
-          <MessageCircle size={18} />
+          <WhatsAppIcon />
           Atendimento
         </button>
       </header>
@@ -273,7 +292,7 @@ function App() {
           </p>
           <div className="hero-actions">
             <button className="btn btn-primary" type="button" onClick={openGenericWhatsApp}>
-              <MessageCircle size={20} />
+              <WhatsAppIcon />
               Falar com a MLX
             </button>
             <a className="btn btn-secondary" href="#como-funciona">
@@ -298,18 +317,16 @@ function App() {
         </div>
       </section>
 
-      <section className="client-strip" aria-label="Carrossel de clientes">
+      <section className="client-strip" aria-label="Carrossel de instituições parceiras">
         <div className="section-heading compact">
-          <span>Clientes atendidos</span>
-          <h2>Histórias em andamento, cada uma tratada de forma individual</h2>
+          <span>Instituições</span>
+          <h2>Instituições parceiras que fortalecem trajetórias educacionais</h2>
         </div>
         <div className="circle-marquee">
           <div className="circle-track">
-            {doubledClients.map((client, index) => (
-              <div className="client-bubble" key={`${client.name}-${index}`}>
-                <span>{client.initials}</span>
-                <strong>{client.name}</strong>
-                <small>{client.label}</small>
+            {doubledInstitutionLogos.map((logo, index) => (
+              <div className="client-bubble institution-bubble" key={`${logo.src}-${index}`}>
+                <img src={logo.src} alt={logo.alt} loading="eager" />
               </div>
             ))}
           </div>
@@ -388,7 +405,7 @@ function App() {
             >
               <BookOpenCheck size={18} />
               <span>{level.name}</span>
-              <MessageCircle className="course-whatsapp" size={19} />
+              <WhatsAppIcon className="course-whatsapp" />
             </button>
           ))}
         </div>
@@ -466,7 +483,7 @@ function App() {
           <div className="footer-column">
             <h3>Atendimento</h3>
             <button type="button" onClick={openGenericWhatsApp}>
-              <MessageCircle size={17} />
+              <WhatsAppIcon />
               WhatsApp regional
             </button>
             <span>
@@ -512,7 +529,7 @@ function App() {
         onClick={openGenericWhatsApp}
         aria-label="Abrir atendimento por WhatsApp"
       >
-        <MessageCircle size={26} />
+        <WhatsAppIcon className="whatsapp-glyph-floating" />
       </button>
 
       {whatsAppContext && (
@@ -533,7 +550,7 @@ function App() {
               <X size={20} />
             </button>
             <span className="dialog-eyebrow">
-              <MessageCircle size={16} />
+              <WhatsAppIcon />
               Atendimento por região
             </span>
             <h3>
