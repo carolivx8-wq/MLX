@@ -80,8 +80,9 @@ const genericWhatsAppMessage =
 const whatsappRegions = [
   { id: "norte", label: "Região Norte", phone: "" },
   { id: "nordeste", label: "Região Nordeste", phone: "" },
-  { id: "centro-sul", label: "Região Centro-Sul", phone: "" },
+  { id: "centro-oeste", label: "Região Centro-Oeste", phone: "" },
   { id: "sudeste", label: "Região Sudeste", phone: "" },
+  { id: "sul", label: "Região Sul", phone: "" },
 ];
 
 const certificationLevels = [

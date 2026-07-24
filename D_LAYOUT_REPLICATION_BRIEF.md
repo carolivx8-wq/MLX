@@ -73,6 +73,7 @@
 - Nova validacao de paridade executada apos ajuste dourado: screenshots `desktop-gold.png` e `mobile-gold.png`.
 - Ajuste posterior de identidade educacional: fundo `#011F67`, fonte branca, surfaces em azul claro e padrao com formas academicas conforme prints fornecidos.
 - Fluxo de WhatsApp validado via Playwright: botao flutuante abre modal regional, nivel de certificacao abre o mesmo modal com mensagem especifica.
+- Regioes de WhatsApp separadas em Norte, Nordeste, Centro-Oeste, Sudeste e Sul.
 - Validacao posterior confirmou os niveis Ensino Medio, Tecnico, Graduacao, Pos-Graduacao, Especializacao/MBA, Mestrado e Doutorado / PHD com pop-up regional.
 - Carrossel atualizado com logos reais de instituicoes e icone de WhatsApp redesenhado com telefone dentro do balao.
 
