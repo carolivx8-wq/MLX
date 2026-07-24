@@ -47,6 +47,7 @@
 - Carrossel circular de clientes em marquee horizontal.
 - Secao "Como funciona" com quatro cards numerados.
 - Galeria/carrossel de diplomas com as 12 imagens locais.
+- Carrossel de pessoas com diploma reorganizado em sequencia homem/mulher e headline de mais de 10 mil beneficiados.
 - Niveis de certificacao em grid compacto.
 - Faixa de provas/metricas.
 - FAQ em acordeon.

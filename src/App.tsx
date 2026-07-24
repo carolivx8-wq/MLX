@@ -27,22 +27,30 @@ import { useState } from "react";
 const brandName = "MLX Assessoria Educacional";
 const slogan = "O elo que faltava entre você e seu diploma.";
 
-const diplomaImages = [
-  "WhatsApp Image 2026-07-21 at 19.38.37 (1).jpeg",
-  "WhatsApp Image 2026-07-21 at 19.38.37 (2).jpeg",
-  "WhatsApp Image 2026-07-21 at 19.38.37.jpeg",
+const maleDiplomaImages = [
   "WhatsApp Image 2026-07-21 at 19.38.38 (1).jpeg",
   "WhatsApp Image 2026-07-21 at 19.38.38 (2).jpeg",
   "WhatsApp Image 2026-07-21 at 19.38.38 (3).jpeg",
   "WhatsApp Image 2026-07-21 at 19.38.38.jpeg",
+];
+
+const femaleDiplomaImages = [
+  "WhatsApp Image 2026-07-21 at 19.38.37 (1).jpeg",
+  "WhatsApp Image 2026-07-21 at 19.38.37 (2).jpeg",
+  "WhatsApp Image 2026-07-21 at 19.38.37.jpeg",
   "WhatsApp Image 2026-07-21 at 19.38.39 (1).jpeg",
   "WhatsApp Image 2026-07-21 at 19.38.39 (2).jpeg",
   "WhatsApp Image 2026-07-21 at 19.38.39 (3).jpeg",
   "WhatsApp Image 2026-07-21 at 19.38.39.jpeg",
   "WhatsApp Image 2026-07-21 at 19.38.40.jpeg",
-].map((name) => ({
+];
+
+const diplomaImages = femaleDiplomaImages.flatMap((femaleImage, index) => [
+  { name: maleDiplomaImages[index % maleDiplomaImages.length], gender: "homem" },
+  { name: femaleImage, gender: "mulher" },
+]).map(({ name, gender }) => ({
   src: new URL(`../Diplomas/${name}`, import.meta.url).href,
-  alt: `Exemplo de diploma apresentado pela ${brandName} - ${name}`,
+  alt: `Pessoa beneficiada pela ${brandName} segurando diploma (${gender}) - ${name}`,
 }));
 
 const institutionLogos = [
@@ -359,11 +367,11 @@ function App() {
 
       <section id="diplomas" className="diploma-section section-pad">
         <div className="section-heading">
-          <span>Apresentação visual</span>
-          <h2>Diplomas e certificados apresentados com cuidado</h2>
+          <span>Resultados reais</span>
+          <h2>JÁ SÃO MAIS DE 10 MIL PESSOAS BENEFICIADAS.</h2>
           <p>
-            Uma seleção visual dos materiais apresentados, organizada em galeria
-            contínua para reforçar confiança logo no primeiro acesso.
+            Histórias de conquista apresentadas em uma galeria contínua, com
+            pessoas que avançaram em suas trajetórias educacionais.
           </p>
         </div>
         <div className="diploma-frame">
