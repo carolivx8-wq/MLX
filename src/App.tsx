@@ -1,9 +1,9 @@
 import {
   Award,
-  BookOpenCheck,
   Check,
   Clock3,
   FileText,
+  GraduationCap,
   Lock,
   ScrollText,
   Send,
@@ -310,22 +310,26 @@ function App() {
         </h2>
         <div className="course-grid">
           {certificationLevels.map((level) => (
-            <button
-              className="dark-card course-pill"
-              key={level.name}
-              type="button"
-              onClick={() =>
-                setWhatsAppContext({
-                  kind: "certification",
-                  certification: level.name,
-                  message: level.message,
-                })
-              }
-            >
-              <BookOpenCheck size={18} />
-              <span>{level.name}</span>
-              <WhatsAppIcon className="course-whatsapp" />
-            </button>
+            <article className="dark-card level-card" key={level.name}>
+              <span className="level-icon" aria-hidden="true">
+                <GraduationCap size={30} />
+              </span>
+              <h3>{level.name}</h3>
+              <button
+                className="level-cta"
+                type="button"
+                onClick={() =>
+                  setWhatsAppContext({
+                    kind: "certification",
+                    certification: level.name,
+                    message: level.message,
+                  })
+                }
+              >
+                <span>Consultar</span>
+                <WhatsAppIcon className="course-whatsapp" />
+              </button>
+            </article>
           ))}
         </div>
       </section>
