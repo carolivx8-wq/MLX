@@ -3,12 +3,18 @@ import {
   Award,
   BadgeCheck,
   BookOpenCheck,
+  Building2,
   CheckCircle2,
   ChevronDown,
+  Clock3,
   FileCheck2,
   GraduationCap,
+  Instagram,
   LockKeyhole,
+  Mail,
+  MapPin,
   MessageCircle,
+  Phone,
   Send,
   ShieldCheck,
   Sparkles,
@@ -436,6 +442,69 @@ function App() {
           Quero atendimento MLX
         </button>
       </section>
+
+      <footer className="site-footer">
+        <div className="footer-main">
+          <div className="footer-brand">
+            <span className="footer-mark" aria-hidden="true">
+              MLX
+            </span>
+            <div>
+              <strong>{brandName}</strong>
+              <p>{slogan}</p>
+            </div>
+          </div>
+
+          <div className="footer-column">
+            <h3>Navegação</h3>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#diplomas">Diplomas</a>
+            <a href="#certificacoes">Certificações</a>
+            <a href="#duvidas">Dúvidas frequentes</a>
+          </div>
+
+          <div className="footer-column">
+            <h3>Atendimento</h3>
+            <button type="button" onClick={openGenericWhatsApp}>
+              <MessageCircle size={17} />
+              WhatsApp regional
+            </button>
+            <span>
+              <Phone size={16} />
+              (11) 4002-8922
+            </span>
+            <span>
+              <Mail size={16} />
+              contato@mlxeducacional.com.br
+            </span>
+            <span>
+              <Clock3 size={16} />
+              Seg. a Sex. das 8h às 18h
+            </span>
+          </div>
+
+          <div className="footer-column footer-contact">
+            <h3>Institucional</h3>
+            <span>
+              <Building2 size={16} />
+              CNPJ 12.345.678/0001-90
+            </span>
+            <span>
+              <MapPin size={16} />
+              Rua das Acácias, 128 - Sala 804, Centro, São Paulo - SP
+            </span>
+            <span>
+              <Instagram size={16} />
+              @mlx.assessoriaeducacional
+            </span>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>Dados institucionais provisórios para apresentação da landing page.</span>
+          <span>© 2026 MLX Assessoria Educacional. Todos os direitos reservados.</span>
+        </div>
+      </footer>
 
       <button
         className="floating-whatsapp"

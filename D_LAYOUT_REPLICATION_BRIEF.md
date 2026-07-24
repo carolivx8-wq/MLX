@@ -51,6 +51,7 @@
 - Faixa de provas/metricas.
 - FAQ em acordeon.
 - CTA final e botao flutuante de WhatsApp.
+- Rodape institucional com dados ficticios, links rapidos e canal de atendimento.
 
 ## Assets
 
