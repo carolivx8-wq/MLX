@@ -26,6 +26,10 @@
 
 html {
   scroll-behavior: smooth;
+  /* O .animated-background e o botao flutuante sao position: fixed, entao o
+     efeito elastico do iOS levanta os dois e expoe o azul liso do canvas
+     depois do rodape. Sem repique, nao ha o que expor. */
+  overscroll-behavior-y: none;
 }
 
 body {
