@@ -5,8 +5,8 @@
   --card: #0b0f18;
   --card-2: #10151f;
   --card-border: rgba(255, 255, 255, 0.1);
-  --gold: #d9a63a;
-  --gold-bright: #f0c463;
+  --accent: #1b67e9;
+  --accent-bright: #6fabff;
   --text: #ffffff;
   --muted: rgba(255, 255, 255, 0.72);
   --whatsapp: #25d366;
@@ -151,7 +151,7 @@ h3 {
 }
 
 .display-title span {
-  color: var(--gold-bright);
+  color: var(--accent-bright);
 }
 
 /* ---------- Cabecalho ---------- */
@@ -248,7 +248,7 @@ h3 {
 
 .hero-highlights svg {
   flex: 0 0 auto;
-  color: var(--gold-bright);
+  color: var(--accent-bright);
 }
 
 /* ---------- Carrossel de diplomas ---------- */
@@ -343,10 +343,10 @@ h3 {
   width: 42px;
   height: 42px;
   margin-bottom: 22px;
-  border: 1px solid rgba(217, 166, 58, 0.32);
+  border: 1px solid rgba(111, 171, 255, 0.34);
   border-radius: 10px;
-  background: rgba(217, 166, 58, 0.12);
-  color: var(--gold-bright);
+  background: rgba(27, 103, 233, 0.2);
+  color: var(--accent-bright);
 }
 
 .benefit-card h3 {
@@ -424,7 +424,7 @@ h3 {
 
 .level-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(217, 166, 58, 0.45);
+  border-color: rgba(111, 171, 255, 0.45);
 }
 
 .level-icon {
@@ -432,11 +432,11 @@ h3 {
   place-items: center;
   width: 62px;
   height: 62px;
-  border: 1px solid rgba(240, 196, 99, 0.45);
+  border: 1px solid rgba(111, 171, 255, 0.45);
   border-radius: 16px;
-  background: linear-gradient(150deg, rgba(240, 196, 99, 0.26), rgba(217, 166, 58, 0.1));
-  color: var(--gold-bright);
-  box-shadow: 0 10px 26px rgba(217, 166, 58, 0.18);
+  background: linear-gradient(150deg, rgba(111, 171, 255, 0.26), rgba(27, 103, 233, 0.14));
+  color: var(--accent-bright);
+  box-shadow: 0 10px 26px rgba(27, 103, 233, 0.3);
 }
 
 .level-card h3 {
@@ -658,7 +658,7 @@ h3 {
 
 .region-option svg {
   flex: 0 0 auto;
-  color: var(--gold-bright);
+  color: var(--accent-bright);
 }
 
 .region-label {
