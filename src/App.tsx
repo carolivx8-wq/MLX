@@ -119,16 +119,16 @@ const genericWhatsAppMessage =
   "Olá! Vim pelo site da MLX Assessoria Educacional e gostaria de receber atendimento.";
 
 const whatsappRegions = [
-  { id: "norte", name: "Norte", states: "AC - AP - AM - PA - RO - RR - TO", phone: "" },
+  { id: "norte", name: "Norte", states: "AC - AP - AM - PA - RO - RR - TO", phone: "5511925375259" },
   {
     id: "nordeste",
     name: "Nordeste",
     states: "AL - BA - CE - MA - PB - PE - PI - RN - SE",
-    phone: "",
+    phone: "5511918201389",
   },
-  { id: "centro-oeste", name: "Centro-Oeste", states: "DF - GO - MT - MS", phone: "" },
-  { id: "sudeste", name: "Sudeste", states: "ES - MG - RJ - SP", phone: "" },
-  { id: "sul", name: "Sul", states: "RS - PR - SC", phone: "" },
+  { id: "centro-oeste", name: "Centro-Oeste", states: "DF - GO - MT - MS", phone: "5511926674240" },
+  { id: "sudeste", name: "Sudeste", states: "ES - MG - RJ - SP", phone: "5511937722499" },
+  { id: "sul", name: "Sul", states: "RS - PR - SC", phone: "5511926674240" },
 ];
 
 const certificationLevels = [
@@ -136,43 +136,43 @@ const certificationLevels = [
     icon: School,
     name: "Ensino Médio",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Ensino Médio. Pode me orientar?",
+      "Olá! Tenho interesse no Diploma de Ensino Médio.\nComo funciona?",
   },
   {
     icon: Wrench,
     name: "Técnico",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de nível Técnico. Pode me orientar?",
+      "Olá! Tenho interesse no Diploma de Técnico.\nComo funciona?",
   },
   {
     icon: GraduationCap,
     name: "Graduação",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Graduação. Pode me orientar?",
+      "Olá! Tenho interesse no Diploma de Graduação\nComo funciona?",
   },
   {
     icon: BookOpenCheck,
     name: "Pós-Graduação",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Pós-Graduação. Pode me orientar?",
+      "Olá! Tenho interesse na Pós-Graduação.\nComo funciona?",
   },
   {
     icon: Briefcase,
     name: "Especialização/MBA",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Especialização/MBA. Pode me orientar?",
+      "Olá! Tenho interesse no Certificado de Especialização/MBA.\nComo funciona?",
   },
   {
     icon: Medal,
     name: "Mestrado",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Mestrado. Pode me orientar?",
+      "Olá! Tenho interesse no Diploma de Mestre.\nComo funciona?",
   },
   {
     icon: Trophy,
     name: "Doutorado / PHD",
     message:
-      "Olá! Vim pelo site da MLX Assessoria Educacional e tenho interesse em certificação de Doutorado / PHD. Pode me orientar?",
+      "Olá! Tenho interesse no Diploma de Doutor.\nComo funciona?",
   },
 ];
 
